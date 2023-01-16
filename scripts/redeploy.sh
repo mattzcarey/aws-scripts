@@ -65,7 +65,6 @@ function destroy {
     for i in ${accounts[@]}; do
         yarn --cwd ./backend/$i/ destroy -c stage=$STAGE -c region=$REGION
     done
-    yarn --cwd ./backend/api/ destroy -c stage=$STAGE -c region=$REGION
 }
 
 function deploy {
@@ -74,7 +73,6 @@ function deploy {
     for i in ${accounts[@]}; do
         yarn --cwd ./backend/$i/ deploy -c stage=$STAGE -c region=$REGION
     done
-    yarn --cwd ./backend/api/ deploy -c stage=$STAGE -c region=$REGION
 }
 
 #call functions
