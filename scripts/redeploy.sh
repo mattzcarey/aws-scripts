@@ -60,6 +60,11 @@ function destroy {
         ./scripts/delete-s3-buckets.sh $STAGE $REGION $i
     done
 
+    #delete log groups
+    for i in ${accounts[@]}; do
+        ./scripts/delete-log-groups.sh $STAGE $REGION $i
+    done
+
     #destroy stacks
     echo "Destroying stacks ....."
     for i in ${accounts[@]}; do
